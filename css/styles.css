@@ -14,7 +14,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-padding-top: 72px; }
+html { scroll-padding-top: 86px; }
 body {
   margin: 0;
   font-family: var(--body);
@@ -71,12 +71,12 @@ p { margin: 0 0 1em; }
 .site-header.scrolled { background: rgba(20,20,20,.94); backdrop-filter: blur(8px); }
 /* Offenes Handy-Menü: backdrop-filter/transform würden das fixierte Menü auf die Header-Höhe begrenzen */
 .site-header.menu-open { backdrop-filter: none; transform: none; background: var(--ink); }
-.header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 86px; }
 .brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--white); }
-.brand-mark { height: 48px; width: auto; }
+.brand-mark { height: 64px; width: auto; }
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
-.brand-top { font: 600 .56rem var(--body); letter-spacing: .62em; margin-bottom: .22rem; }
-.brand-main { font: 900 1.55rem var(--body); letter-spacing: .01em; }
+.brand-top { font: 600 .7rem var(--body); letter-spacing: .6em; margin-bottom: .25rem; }
+.brand-main { font: 900 2rem var(--body); letter-spacing: .01em; }
 .main-nav { display: flex; align-items: center; gap: 2rem; }
 .main-nav a { position: relative; text-decoration: none; font-weight: 500; font-size: .95rem; }
 .main-nav a:not(.nav-cta)::after {
@@ -410,10 +410,10 @@ details p { color: var(--muted); padding-right: 3rem; animation: fadeUp .45s var
     height: 100vh; height: 100dvh;
     flex-direction: column; justify-content: center; gap: 1.6rem;
     background: var(--ink);
-    clip-path: circle(0 at calc(100% - 36px) 36px);
+    clip-path: circle(0 at calc(100% - 36px) 43px);
     transition: clip-path .6s var(--ease);
   }
-  .main-nav.open { clip-path: circle(150% at calc(100% - 36px) 36px); }
+  .main-nav.open { clip-path: circle(150% at calc(100% - 36px) 43px); }
   .main-nav a { font: 700 2rem var(--display); text-transform: uppercase; }
   .nav-cta { font-size: 1.4rem !important; }
   .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(4px) rotate(45deg); }
