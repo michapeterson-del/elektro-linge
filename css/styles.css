@@ -292,9 +292,19 @@ summary:hover { color: #000; }
 details p { color: var(--muted); padding-right: 3rem; animation: fadeUp .45s var(--ease); }
 
 /* ============ Kontakt ============ */
-.contact { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: start; }
-.contact-info .split-title { margin-bottom: 1rem; }
-.person { margin: 2.5rem 0 2rem; padding-left: 1rem; border-left: 3px solid var(--yellow); }
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  grid-template-areas: "head form" "info form";
+  grid-template-rows: auto 1fr;
+  column-gap: 5rem;
+  align-items: start;
+}
+.contact-head { grid-area: head; }
+.contact-info { grid-area: info; }
+.contact-form { grid-area: form; }
+.contact-head .split-title { margin-bottom: 1rem; }
+.person { margin: 1.5rem 0 2rem; padding-left: 1rem; border-left: 3px solid var(--yellow); }
 .person-label { display: block; font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.5); }
 .person strong { font: 700 1.6rem var(--display); color: var(--white); text-transform: uppercase; }
 .contact-list { list-style: none; margin: 0; padding: 0; }
@@ -378,6 +388,7 @@ details p { color: var(--muted); padding-right: 3rem; animation: fadeUp .45s var
 /* ============ Responsive ============ */
 @media (max-width: 1000px) {
   .about, .contact, .faq { grid-template-columns: 1fr; gap: 3.5rem; }
+  .contact { grid-template-areas: "head" "form" "info"; grid-template-rows: auto; gap: 2rem; }
   .about-media { max-width: 560px; }
   .service { grid-template-columns: 50px 1fr; }
   .service p { grid-column: 2; }
@@ -409,7 +420,18 @@ details p { color: var(--muted); padding-right: 3rem; animation: fadeUp .45s var
   .timeline ol { grid-template-columns: 1fr; }
   .facts { grid-template-columns: 1fr; gap: 1rem; }
   .field-row { flex-direction: column; gap: 0; }
-  .contact-form { padding: 1.6rem; }
-  .contact-list li { grid-template-columns: 1fr; gap: .2rem; }
+  /* Kontakt am Handy: Überschrift, dann gleich das Formular, darunter kompakte Kontaktdaten */
+  #kontakt { padding: 40px 0 64px; }
+  .contact { grid-template-columns: 1fr; grid-template-areas: "head" "form" "info"; grid-template-rows: auto; gap: 1.5rem; }
+  .contact-head .split-title { font-size: 1.9rem; margin-bottom: .3rem; }
+  .contact-head p { margin: 0; }
+  .contact-form { padding: 1.3rem 1.2rem; }
+  .contact-form .field { margin-bottom: .9rem; }
+  .contact-form .field textarea { height: 90px; min-height: 90px; }
+  .contact-form .checkbox { margin: .3rem 0 1.1rem; font-size: .8rem; }
+  .person { margin: .5rem 0 .8rem; display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap; }
+  .person strong { font-size: 1.2rem; }
+  .contact-list li { grid-template-columns: 92px 1fr; gap: .6rem; padding: .55rem 0; font-size: .95rem; }
+  .contact-list .label { font-size: .7rem; padding-top: .3em; }
   .ticker span { font-size: 1.2rem; }
 }
