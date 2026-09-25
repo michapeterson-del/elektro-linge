@@ -66,12 +66,11 @@ p { margin: 0 0 1em; }
   inset: 0 0 auto;
   z-index: 50;
   color: var(--white);
-  transition: background .3s, box-shadow .3s, transform .35s var(--ease);
+  transition: background .3s, box-shadow .3s;
 }
 .site-header.scrolled { background: rgba(20,20,20,.94); backdrop-filter: blur(8px); }
 /* Offenes Handy-Menü: backdrop-filter/transform würden das fixierte Menü auf die Header-Höhe begrenzen */
 .site-header.menu-open { backdrop-filter: none; transform: none; background: var(--ink); }
-.site-header.hidden { transform: translateY(-100%); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; font: 700 1.15rem var(--display); letter-spacing: .08em; }
 .main-nav { display: flex; align-items: center; gap: 2rem; }

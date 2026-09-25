@@ -23,16 +23,13 @@ document.querySelectorAll(".photo img").forEach((img) => {
   img.addEventListener("error", markMissing);
 });
 
-// ---------- Header: Hintergrund beim Scrollen, beim Runterscrollen ausblenden ----------
+// ---------- Header: Hintergrund beim Scrollen (bleibt immer sichtbar) ----------
 const header = document.querySelector(".site-header");
 const bar = document.querySelector(".progress span");
-let lastY = window.scrollY;
 
 function onScroll() {
   const y = window.scrollY;
   header.classList.toggle("scrolled", y > 40);
-  header.classList.toggle("hidden", y > lastY && y > 400 && !nav.classList.contains("open"));
-  lastY = y;
 
   const max = document.documentElement.scrollHeight - window.innerHeight;
   bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
