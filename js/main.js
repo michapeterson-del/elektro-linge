@@ -1,7 +1,7 @@
 // Kontaktanfragen gehen an diese Adresse (Versand über formsubmit.co).
 // Beim allerersten Absenden schickt FormSubmit eine Bestätigungs-Mail an diese
 // Adresse – den Link darin einmal anklicken, danach kommen alle Anfragen an.
-const CONTACT_EMAIL = "samuel.foth@elektro-linge.de";
+const CONTACT_EMAIL = "info@elektro-linge.de";
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

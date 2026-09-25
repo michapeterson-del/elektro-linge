@@ -18,7 +18,7 @@ favicon.svg       Browser-Icon
 ## Kontaktformular → E-Mail
 
 Anfragen aus dem Formular werden über [FormSubmit](https://formsubmit.co) an
-**samuel.foth@elektro-linge.de** geschickt (Adresse steht oben in `js/main.js`).
+**info@elektro-linge.de** geschickt (Adresse steht oben in `js/main.js`).
 
 **Wichtig:** Beim allerersten Absenden schickt FormSubmit eine Bestätigungs-Mail an diese Adresse.
 Den Link darin einmal anklicken – ab dann kommt jede Anfrage als E-Mail an. Mit „Antworten“
