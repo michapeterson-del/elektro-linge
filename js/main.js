@@ -105,46 +105,23 @@ if ("IntersectionObserver" in window && !reduceMotion) {
   inViewTargets.forEach(reveal);
 }
 
-// ---------- Leistungen: Foto folgt der Maus ----------
-const preview = document.querySelector(".hover-preview");
-if (preview && finePointer) {
-  const pImg = preview.querySelector("img");
-  let x = 0, y = 0, cx = 0, cy = 0, running = false;
-
-  const loop = () => {
-    cx += (x - cx) * 0.15;
-    cy += (y - cy) * 0.15;
-    preview.style.left = `${cx}px`;
-    preview.style.top = `${cy}px`;
-    if (running) requestAnimationFrame(loop);
-  };
-
-  document.querySelectorAll(".service").forEach((row) => {
-    row.addEventListener("mouseenter", (e) => {
-      pImg.src = row.dataset.img;
-      pImg.onerror = () => preview.classList.remove("on");
-      if (!running) { cx = x = e.clientX + 170; cy = y = e.clientY; running = true; loop(); }
-      preview.classList.add("on");
-    });
-    row.addEventListener("mousemove", (e) => { x = e.clientX + 170; y = e.clientY; });
-    row.addEventListener("mouseleave", () => { preview.classList.remove("on"); running = false; });
-  });
-}
-
-// ---------- Magnetische Buttons ----------
-if (finePointer && !reduceMotion) {
-  document.querySelectorAll(".magnetic").forEach((btn) => {
-    btn.addEventListener("mousemove", (e) => {
-      const r = btn.getBoundingClientRect();
-      const dx = e.clientX - (r.left + r.width / 2);
-      const dy = e.clientY - (r.top + r.height / 2);
-      btn.style.transform = `translate(${dx * 0.25}px, ${dy * 0.35}px)`;
-    });
-    btn.addEventListener("mouseleave", () => {
-      btn.style.transition = "transform .5s cubic-bezier(.2,.7,.1,1)";
-      btn.style.transform = "";
-      setTimeout(() => (btn.style.transition = ""), 500);
-    });
+// ---------- Leistungen: Foto klappt rechts neben der Zeile auf ----------
+if (finePointer) {
+  document.querySelector(".service-list")?.classList.add("thumbs");
+  document.querySelectorAll(".service[data-img]").forEach((row) => {
+    const thumb = document.createElement("div");
+    thumb.className = "service-thumb";
+    thumb.setAttribute("aria-hidden", "true");
+    row.append(thumb);
+    // Bild erst beim ersten Hover laden
+    row.addEventListener("mouseenter", () => {
+      if (thumb.firstChild) return;
+      const img = new Image();
+      img.alt = "";
+      img.onerror = () => thumb.remove();
+      img.src = row.dataset.img;
+      thumb.append(img);
+    }, { once: true });
   });
 }
 
