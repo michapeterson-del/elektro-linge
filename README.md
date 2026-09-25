@@ -37,7 +37,7 @@ Team, Auto, Zählerschrank) nach `assets/img/` legen und die `src`- bzw. `data-i
 Platzhalter stehen in eckigen Klammern `[...]` bzw. als `0000 / 000 000`:
 
 - Telefonnummer (auch in den `tel:`-Links `+490000000000`)
-- Ort / Einzugsgebiet, Adresse
+- Straße und Hausnummer
 - Impressum: Inhaber, USt-ID, Handwerkskammer, Handwerksrolle, Installateurverzeichnis, Versicherung
 - Datenschutz: Hosting-Anbieter; rechtlich prüfen lassen
 
