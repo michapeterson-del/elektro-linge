@@ -228,7 +228,16 @@ p { margin: 0 0 1em; }
 .about { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
 .about-media { position: relative; padding: 0 12% 18% 0; }
 .photo-a { aspect-ratio: 4 / 5; }
-.photo-b { position: absolute; right: 0; bottom: 0; width: 55%; aspect-ratio: 1; border: 8px solid var(--ink); }
+.about-badge {
+  position: absolute; right: 0; bottom: 0;
+  width: 42%; aspect-ratio: 1;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  background: var(--yellow); color: var(--ink);
+  border: 8px solid var(--ink);
+  text-align: center;
+}
+.about-badge strong { font: 700 clamp(2.6rem, 6vw, 4.6rem) / 1 var(--display); }
+.badge-small { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
 .about-text .split-title { margin-bottom: 2rem; }
 .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 3rem 0 0; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.15); }
 .facts dt { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.5); }
@@ -239,7 +248,7 @@ p { margin: 0 0 1em; }
 .clip-reveal img { transform: scale(1.25); transition: transform 1.6s var(--ease); }
 .clip-reveal.in { clip-path: inset(0 0 0 0); }
 .clip-reveal.in img { transform: scale(1); }
-.photo-b.clip-reveal { transition-delay: .25s; }
+.about-badge.clip-reveal { transition-delay: .25s; }
 
 /* ============ Ablauf ============ */
 .timeline { position: relative; }
@@ -258,11 +267,6 @@ p { margin: 0 0 1em; }
 .timeline li::before { content: "0" counter(step); display: block; font: 600 .9rem var(--display); color: var(--muted); margin-bottom: .4rem; }
 .timeline h3 { font: 700 1.5rem var(--display); text-transform: uppercase; margin-bottom: .6rem; }
 .timeline p { color: var(--muted); margin: 0; }
-
-/* ============ Band ============ */
-.band { background: var(--yellow); padding: 3rem 0; }
-.band-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-.band-text { margin: 0; font: 700 clamp(1.5rem, 3.4vw, 2.6rem) var(--display); text-transform: uppercase; line-height: 1.05; max-width: 22em; }
 
 /* ============ FAQ ============ */
 .faq { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }

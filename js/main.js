@@ -11,7 +11,14 @@ document.getElementById("year")?.replaceChildren(String(new Date().getFullYear()
 
 // ---------- Fotos: Ersatzfläche, falls ein Bild nicht lädt ----------
 document.querySelectorAll(".photo img").forEach((img) => {
-  const markMissing = () => img.closest(".photo").classList.add("missing");
+  const markMissing = () => {
+    // Ersatzbild aus dem Projekt verwenden, falls angegeben
+    if (img.dataset.fallback && img.getAttribute("src") !== img.dataset.fallback) {
+      img.src = img.dataset.fallback;
+      return;
+    }
+    img.closest(".photo").classList.add("missing");
+  };
   if (img.complete && img.naturalWidth === 0) markMissing();
   img.addEventListener("error", markMissing);
 });
