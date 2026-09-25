@@ -27,7 +27,7 @@ die Anfrage per E-Mail-Programm zu senden.
 
 ## Fotos
 
-Die Fotos kommen im Moment von Unsplash (freie Lizenz) und werden per Link geladen.
+Die Fotos kommen im Moment von Unsplash und Pexels (freie Lizenzen) und werden per Link geladen.
 Lädt ein Bild nicht, erscheint eine gestreifte Ersatzfläche. **Besser: eigene Fotos** (Baustelle,
 Team, Auto, Zählerschrank) nach `assets/img/` legen und die `src`- bzw. `data-img`-Adressen in
 `index.html` ersetzen. Das wirkt echter und spart den Unsplash-Absatz in der Datenschutzerklärung.
