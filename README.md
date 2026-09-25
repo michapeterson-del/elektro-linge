@@ -11,8 +11,8 @@ impressum.html    Impressum (Vorlage)
 datenschutz.html  Datenschutzerklärung (Vorlage)
 css/styles.css    Gestaltung (responsive)
 js/main.js        Animationen, Navigation, Kontaktformular (Versand)
-assets/logo.svg   Logo
-favicon.svg       Browser-Icon
+assets/logo-mark-white.png / logo-mark-navy.png   Logo-Zeichen (Lingese mit Blitz)
+favicon.png, apple-touch-icon.png                 Browser-/Handy-Icon
 ```
 
 ## Kontaktformular → E-Mail

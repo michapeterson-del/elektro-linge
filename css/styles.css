@@ -72,7 +72,11 @@ p { margin: 0 0 1em; }
 /* Offenes Handy-Menü: backdrop-filter/transform würden das fixierte Menü auf die Header-Höhe begrenzen */
 .site-header.menu-open { backdrop-filter: none; transform: none; background: var(--ink); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-.brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; font: 700 1.15rem var(--display); letter-spacing: .08em; }
+.brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--white); }
+.brand-mark { height: 48px; width: auto; }
+.brand-text { display: flex; flex-direction: column; line-height: 1; }
+.brand-top { font: 600 .56rem var(--body); letter-spacing: .62em; margin-bottom: .22rem; }
+.brand-main { font: 900 1.55rem var(--body); letter-spacing: .01em; }
 .main-nav { display: flex; align-items: center; gap: 2rem; }
 .main-nav a { position: relative; text-decoration: none; font-weight: 500; font-size: .95rem; }
 .main-nav a:not(.nav-cta)::after {
