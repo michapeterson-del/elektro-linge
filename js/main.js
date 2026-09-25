@@ -51,6 +51,7 @@ const toggle = document.querySelector(".nav-toggle");
 const nav = document.getElementById("main-nav");
 const setNav = (open) => {
   nav.classList.toggle("open", open);
+  header.classList.toggle("menu-open", open);
   toggle.setAttribute("aria-expanded", String(open));
   toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
   document.body.style.overflow = open ? "hidden" : "";
