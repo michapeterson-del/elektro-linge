@@ -10,23 +10,36 @@ index.html        Startseite (Leistungen, Über uns, Ablauf, FAQ, Kontakt)
 impressum.html    Impressum (Vorlage)
 datenschutz.html  Datenschutzerklärung (Vorlage)
 css/styles.css    Gestaltung (responsive)
-js/main.js        Mobile Navigation, Animationen, Kontaktformular
+js/main.js        Animationen, Navigation, Kontaktformular (Versand)
 assets/logo.svg   Logo
 favicon.svg       Browser-Icon
 ```
 
+## Kontaktformular → E-Mail
+
+Anfragen aus dem Formular werden über [FormSubmit](https://formsubmit.co) an
+**samuel.foth@elektro-linge.de** geschickt (Adresse steht oben in `js/main.js`).
+
+**Wichtig:** Beim allerersten Absenden schickt FormSubmit eine Bestätigungs-Mail an diese Adresse.
+Den Link darin einmal anklicken – ab dann kommt jede Anfrage als E-Mail an. Mit „Antworten“
+antwortet man direkt dem Kunden. Klappt der Versand nicht, bietet die Seite automatisch an,
+die Anfrage per E-Mail-Programm zu senden.
+
+## Fotos
+
+Die Fotos kommen im Moment von Unsplash (freie Lizenz) und werden per Link geladen.
+Lädt ein Bild nicht, erscheint eine gestreifte Ersatzfläche. **Besser: eigene Fotos** (Baustelle,
+Team, Auto, Zählerschrank) nach `assets/img/` legen und die `src`- bzw. `data-img`-Adressen in
+`index.html` ersetzen. Das wirkt echter und spart den Unsplash-Absatz in der Datenschutzerklärung.
+
 ## Vor dem Livegang anpassen
 
-Alle Platzhalter stehen in eckigen Klammern `[...]` bzw. als `0000 / 000 000`:
+Platzhalter stehen in eckigen Klammern `[...]` bzw. als `0000 / 000 000`:
 
 - Telefonnummer (auch in den `tel:`-Links `+490000000000`)
-- Adresse, Einzugsgebiet (FAQ), Öffnungszeiten
-- E-Mail-Adresse (`info@elektro-linge.de`, auch in `js/main.js`)
+- Ort / Einzugsgebiet, Adresse
 - Impressum: Inhaber, USt-ID, Handwerkskammer, Handwerksrolle, Installateurverzeichnis, Versicherung
 - Datenschutz: Hosting-Anbieter; rechtlich prüfen lassen
-
-Das Kontaktformular öffnet derzeit das E-Mail-Programm des Besuchers (mailto). Für echten Formularversand
-kann später ein Dienst wie Formspree oder ein PHP-Skript beim Hoster angebunden werden.
 
 ## Lokal ansehen
 

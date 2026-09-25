@@ -3,283 +3,270 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elektro Linge – Ihr Meisterbetrieb für Elektroinstallationen</title>
-  <meta name="description" content="Elektro Linge – Ihr Fachbetrieb für Elektroinstallationen, Sanierung, Smart Home, E-Mobilität, Photovoltaik und E-Check. Zuverlässig, sauber und termintreu.">
-  <meta name="theme-color" content="#0f1b2d">
+  <title>Elektro Linge – Elektroinstallation, Sanierung, Wallbox &amp; PV</title>
+  <meta name="description" content="Elektro Linge – Fachbetrieb für Elektroinstallationen. Neubau, Altbausanierung, Zählerschränke, Wallboxen, Photovoltaik, Smart Home und E-Check.">
+  <meta name="theme-color" content="#141414">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- ===== Header / Navigation ===== -->
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <!-- Header -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="Elektro Linge – zur Startseite">
-        <img src="assets/logo.svg" alt="" width="40" height="40">
-        <span>Elektro <strong>Linge</strong></span>
+      <a href="#top" class="brand" aria-label="Elektro Linge – Startseite">
+        <img src="assets/logo.svg" alt="" width="36" height="36">
+        <span>ELEKTRO&nbsp;LINGE</span>
       </a>
 
       <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
+        <span></span><span></span>
       </button>
 
       <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
-        <ul>
-          <li><a href="#leistungen">Leistungen</a></li>
-          <li><a href="#ueber-uns">Über uns</a></li>
-          <li><a href="#ablauf">Ablauf</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#kontakt" class="btn btn-small">Anfrage stellen</a></li>
-        </ul>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#betrieb">Betrieb</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#faq">Fragen</a>
+        <a href="#kontakt" class="nav-cta">Kontakt</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- ===== Hero ===== -->
+    <!-- Hero -->
     <section class="hero">
+      <!-- Foto austauschen: am besten eigenes Baustellenfoto nach assets/img/ legen und hier eintragen -->
+      <div class="hero-media photo" data-parallax="0.25">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=2000&q=70" alt="Elektriker bei der Arbeit an einer Unterverteilung">
+      </div>
+      <div class="hero-shade"></div>
+
       <div class="container hero-inner">
-        <div class="hero-text">
-          <p class="eyebrow">⚡ Neu in der Region – Ihr Elektro-Fachbetrieb</p>
-          <h1>Strom, auf den Sie sich <span class="highlight">verlassen</span> können.</h1>
-          <p class="lead">
-            Von der kompletten Neubau-Installation bis zur Steckdose im Altbau:
-            Elektro Linge plant, installiert und prüft Ihre Elektrik – fachgerecht nach
-            VDE-Norm, sauber und termintreu.
-          </p>
-          <div class="hero-actions">
-            <a href="#kontakt" class="btn">Kostenloses Angebot anfordern</a>
-            <a href="tel:+490000000000" class="btn btn-outline">📞 0000 / 000 000</a>
-          </div>
-          <ul class="hero-badges">
-            <li>✔ Eingetragener Fachbetrieb</li>
-            <li>✔ Festpreis-Angebote</li>
-            <li>✔ Schnelle Terminvergabe</li>
-          </ul>
-        </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="bolt-card">
-            <svg viewBox="0 0 200 200">
-              <circle cx="100" cy="100" r="90" fill="none" stroke="#ffc400" stroke-width="2" stroke-dasharray="6 10" class="spin"/>
-              <path d="M112 30 62 110h34l-10 60 54-86h-36l8-54z" fill="#ffc400"/>
-            </svg>
-            <div class="stat">
-              <strong>100 %</strong>
-              <span>nach VDE-Norm</span>
-            </div>
-          </div>
+        <p class="hero-kicker reveal-up">Elektroinstallation · Sanierung · Service</p>
+        <h1 class="hero-title">
+          <span class="line"><span>Saubere Leitungen.</span></span>
+          <span class="line"><span>Klare Absprachen.</span></span>
+          <span class="line"><span class="accent">Elektro Linge.</span></span>
+        </h1>
+        <p class="hero-lead reveal-up">
+          Wir sind ein neuer Elektrobetrieb aus [Ort]. Wir verlegen, schließen an, prüfen und
+          reparieren – im Neubau, im Altbau und im Gewerbe.
+        </p>
+        <div class="hero-actions reveal-up">
+          <a href="#kontakt" class="btn btn-yellow magnetic">Anfrage schicken <span class="arrow">→</span></a>
+          <a href="tel:+490000000000" class="btn btn-ghost magnetic">0000 / 000 000</a>
         </div>
       </div>
+
+      <!-- Leitung, die sich beim Laden "zeichnet" -->
+      <svg class="hero-wire" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 80 H420 L460 40 H780 L820 80 H1440" />
+      </svg>
     </section>
 
-    <!-- ===== Leistungen ===== -->
+    <!-- Laufband -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Elektroinstallation</span><i></i><span>Altbausanierung</span><i></i><span>Zählerschränke</span><i></i><span>Wallboxen</span><i></i><span>Photovoltaik</span><i></i><span>Smart Home</span><i></i><span>E-Check</span><i></i><span>Störungsdienst</span><i></i>
+        <span>Elektroinstallation</span><i></i><span>Altbausanierung</span><i></i><span>Zählerschränke</span><i></i><span>Wallboxen</span><i></i><span>Photovoltaik</span><i></i><span>Smart Home</span><i></i><span>E-Check</span><i></i><span>Störungsdienst</span><i></i>
+      </div>
+    </div>
+
+    <!-- Leistungen -->
     <section class="section" id="leistungen">
       <div class="container">
-        <header class="section-head">
-          <p class="eyebrow">Unsere Leistungen</p>
-          <h2>Alles rund um Ihre Elektroinstallation</h2>
-          <p>Für Privatkunden, Vermieter und Gewerbe – aus einer Hand.</p>
-        </header>
+        <div class="section-top">
+          <h2 class="split-title">Was wir machen</h2>
+          <p class="section-note">Von der einzelnen Steckdose bis zur kompletten Hausinstallation. Fahren Sie mit der Maus über eine Leistung.</p>
+        </div>
 
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon">🏠</div>
+        <ul class="service-list">
+          <li class="service" data-img="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=70">
+            <span class="num">01</span>
             <h3>Elektroinstallation</h3>
-            <p>Komplette Installation im Neubau, Anbau und Umbau – von der Planung bis zur Abnahme.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🔧</div>
+            <p>Neubau, Anbau, Umbau. Wir planen die Anlage mit Ihnen und setzen sie bis zur Abnahme um.</p>
+          </li>
+          <li class="service" data-img="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=70">
+            <span class="num">02</span>
             <h3>Altbausanierung</h3>
-            <p>Erneuerung veralteter Leitungen, Zählerschränke und Unterverteilungen für mehr Sicherheit.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🔌</div>
+            <p>Alte Stoffleitungen, zweiadrige Installation, fehlender FI? Wir bringen die Elektrik auf den aktuellen Stand.</p>
+          </li>
+          <li class="service" data-img="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=70">
+            <span class="num">03</span>
             <h3>Zählerschrank &amp; Verteilung</h3>
-            <p>Neubau und Modernisierung von Zählerplätzen nach aktuellen TAB-Vorgaben inkl. FI/RCD-Schutz.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🚗</div>
-            <h3>E-Mobilität</h3>
-            <p>Beratung, Anmeldung beim Netzbetreiber und Installation Ihrer Wallbox – förderfähig.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">☀️</div>
+            <p>Neue Zählerplätze nach TAB, Unterverteilungen, Überspannungsschutz, FI/RCD.</p>
+          </li>
+          <li class="service" data-img="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=70">
+            <span class="num">04</span>
+            <h3>Wallbox &amp; E-Mobilität</h3>
+            <p>Beratung, Anmeldung beim Netzbetreiber, Montage und Inbetriebnahme Ihrer Ladestation.</p>
+          </li>
+          <li class="service" data-img="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=70">
+            <span class="num">05</span>
             <h3>Photovoltaik &amp; Speicher</h3>
-            <p>Elektrischer Anschluss von PV-Anlagen und Batteriespeichern, inklusive Zählerumbau.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">📱</div>
+            <p>AC-seitiger Anschluss, Zählerumbau und Einbindung von Batteriespeichern.</p>
+          </li>
+          <li class="service" data-img="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=70">
+            <span class="num">06</span>
             <h3>Smart Home</h3>
-            <p>Intelligente Licht-, Rollladen- und Heizungssteuerung – komfortabel und energiesparend.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">💡</div>
+            <p>Licht, Rollläden und Heizung steuern – per Taster, App oder Zeitplan.</p>
+          </li>
+          <li class="service" data-img="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=900&q=70">
+            <span class="num">07</span>
             <h3>Beleuchtung</h3>
-            <p>Moderne LED-Konzepte für innen und außen, Wohnraum, Garten und Gewerbe.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">✅</div>
-            <h3>E-Check &amp; Prüfungen</h3>
-            <p>Prüfung ortsfester und ortsveränderlicher Anlagen (DGUV V3) mit Prüfprotokoll.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🛠️</div>
+            <p>LED-Planung für Wohnräume, Außenanlagen, Büro und Werkstatt.</p>
+          </li>
+          <li class="service" data-img="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=70">
+            <span class="num">08</span>
+            <h3>E-Check &amp; DGUV V3</h3>
+            <p>Prüfung ortsfester Anlagen und ortsveränderlicher Geräte, mit Protokoll.</p>
+          </li>
+          <li class="service" data-img="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=900&q=70">
+            <span class="num">09</span>
             <h3>Reparatur &amp; Störung</h3>
-            <p>Sicherung fliegt raus? Steckdose ohne Strom? Wir finden den Fehler und beheben ihn schnell.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Über uns ===== -->
-    <section class="section section-alt" id="ueber-uns">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">Über uns</p>
-          <h2>Ein junger Betrieb mit viel Erfahrung</h2>
-          <p>
-            Elektro Linge ist ein neu gegründeter Fachbetrieb für Elektroinstallationen.
-            Hinter dem Betrieb steht ein qualifiziertes Team mit langjähriger Erfahrung aus
-            Handwerk und Industrie. Wir stehen für ehrliche Beratung, saubere Arbeit und
-            faire Preise.
-          </p>
-          <p>
-            Als eingetragener Fachbetrieb arbeiten wir ausschließlich nach den geltenden
-            VDE-Normen und technischen Anschlussbedingungen – damit Ihre Anlage sicher ist
-            und bleibt.
-          </p>
-          <a href="#kontakt" class="btn">Lernen Sie uns kennen</a>
-        </div>
-        <ul class="features">
-          <li>
-            <strong>Pünktlich &amp; zuverlässig</strong>
-            <span>Vereinbarte Termine halten wir ein – versprochen.</span>
-          </li>
-          <li>
-            <strong>Transparente Preise</strong>
-            <span>Klare Angebote ohne versteckte Kosten.</span>
-          </li>
-          <li>
-            <strong>Sauber hinterlassen</strong>
-            <span>Wir arbeiten staubarm und räumen nach getaner Arbeit auf.</span>
-          </li>
-          <li>
-            <strong>Persönlicher Ansprechpartner</strong>
-            <span>Vom ersten Anruf bis zur Abnahme – ein Kontakt für alles.</span>
+            <p>Die Sicherung fliegt, eine Steckdose ist tot? Wir suchen den Fehler und beheben ihn.</p>
           </li>
         </ul>
       </div>
+      <!-- Schwebendes Vorschaubild (Desktop) -->
+      <div class="hover-preview" aria-hidden="true"><img alt=""></div>
     </section>
 
-    <!-- ===== Ablauf ===== -->
+    <!-- Betrieb -->
+    <section class="section section-dark" id="betrieb">
+      <div class="container about">
+        <div class="about-media">
+          <div class="photo photo-a clip-reveal">
+            <img src="https://images.unsplash.com/photo-1621905252472-e8bc8a7ab5b8?auto=format&fit=crop&w=1100&q=70" alt="Elektriker beim Verdrahten" loading="lazy">
+          </div>
+          <div class="photo photo-b clip-reveal" data-parallax="-0.08">
+            <img src="https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?auto=format&fit=crop&w=800&q=70" alt="Werkzeug und Kabel" loading="lazy">
+          </div>
+        </div>
+
+        <div class="about-text">
+          <h2 class="split-title">Neu gegründet.<br>Nicht neu im Handwerk.</h2>
+          <p>
+            Elektro Linge gibt es seit 2026. Die Arbeit selbst machen wir schon deutlich länger –
+            auf Baustellen, in Altbauten, in Betrieben. Jetzt eben auf eigene Rechnung und mit
+            eigenem Namen an der Tür.
+          </p>
+          <p>
+            Was Sie von uns erwarten können: Wir kommen, wenn wir es sagen. Das Angebot ist
+            verständlich. Und nach Feierabend liegt kein Kabelrest mehr auf Ihrem Boden.
+          </p>
+
+          <dl class="facts">
+            <div><dt>Arbeiten nach</dt><dd>VDE &amp; TAB</dd></div>
+            <div><dt>Angebote</dt><dd>schriftlich &amp; kostenlos</dd></div>
+            <div><dt>Rückmeldung</dt><dd>meist innerhalb 24 h</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ablauf -->
     <section class="section" id="ablauf">
       <div class="container">
-        <header class="section-head">
-          <p class="eyebrow">So arbeiten wir</p>
-          <h2>In 4 Schritten zu Ihrer neuen Elektrik</h2>
-        </header>
-        <ol class="steps">
-          <li>
-            <span class="step-no">1</span>
-            <h3>Anfrage</h3>
-            <p>Sie schildern uns Ihr Vorhaben – telefonisch, per E-Mail oder über das Formular.</p>
-          </li>
-          <li>
-            <span class="step-no">2</span>
-            <h3>Besichtigung</h3>
-            <p>Wir schauen uns die Situation vor Ort an und beraten Sie ehrlich.</p>
-          </li>
-          <li>
-            <span class="step-no">3</span>
-            <h3>Angebot</h3>
-            <p>Sie erhalten ein transparentes, verbindliches Angebot.</p>
-          </li>
-          <li>
-            <span class="step-no">4</span>
-            <h3>Umsetzung</h3>
-            <p>Fachgerechte Ausführung, Prüfung und Übergabe mit Dokumentation.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ===== CTA-Banner ===== -->
-    <section class="cta-banner">
-      <div class="container cta-inner">
-        <div>
-          <h2>Störung oder dringendes Problem?</h2>
-          <p>Rufen Sie uns an – wir helfen so schnell wie möglich.</p>
+        <div class="section-top">
+          <h2 class="split-title">So läuft ein Auftrag</h2>
         </div>
-        <a href="tel:+490000000000" class="btn btn-dark">📞 Jetzt anrufen</a>
+        <div class="timeline">
+          <svg class="timeline-wire" viewBox="0 0 1000 20" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 10 H1000"/>
+          </svg>
+          <ol>
+            <li><span class="dot"></span><h3>Anruf oder Nachricht</h3><p>Sie erzählen kurz, worum es geht. Fotos helfen uns oft schon weiter.</p></li>
+            <li><span class="dot"></span><h3>Termin vor Ort</h3><p>Wir schauen uns alles an und sagen ehrlich, was nötig ist – und was nicht.</p></li>
+            <li><span class="dot"></span><h3>Angebot</h3><p>Schriftlich, mit Positionen, die man auch ohne Fachwissen versteht.</p></li>
+            <li><span class="dot"></span><h3>Ausführung</h3><p>Montage, Messung, Prüfprotokoll. Danach bekommen Sie alle Unterlagen.</p></li>
+          </ol>
+        </div>
       </div>
     </section>
 
-    <!-- ===== FAQ ===== -->
+    <!-- Notdienst-Band -->
+    <section class="band">
+      <div class="container band-inner">
+        <p class="band-text">Kein Strom, Sicherung fliegt, es riecht verschmort?</p>
+        <a href="tel:+490000000000" class="btn btn-black magnetic">Direkt anrufen <span class="arrow">→</span></a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
     <section class="section" id="faq">
-      <div class="container narrow">
-        <header class="section-head">
-          <p class="eyebrow">Häufige Fragen</p>
-          <h2>FAQ</h2>
-        </header>
-        <details>
-          <summary>In welchem Gebiet sind Sie tätig?</summary>
-          <p>Wir sind in [Ort] und im Umkreis von ca. [XX] km für Sie im Einsatz. Fragen Sie gerne auch bei weiter entfernten Projekten an.</p>
-        </details>
-        <details>
-          <summary>Ist das Angebot kostenlos?</summary>
-          <p>Ja. Beratung und Angebotserstellung sind für Sie kostenlos und unverbindlich.</p>
-        </details>
-        <details>
-          <summary>Übernehmen Sie auch kleine Aufträge?</summary>
-          <p>Selbstverständlich – vom Austausch einer Steckdose bis zur Komplettinstallation.</p>
-        </details>
-        <details>
-          <summary>Kümmern Sie sich um die Anmeldung beim Netzbetreiber?</summary>
-          <p>Ja. Als eingetragener Fachbetrieb übernehmen wir die Anmeldung von Wallboxen, PV-Anlagen und Zähleränderungen beim Netzbetreiber.</p>
-        </details>
-        <details>
-          <summary>Wie schnell bekomme ich einen Termin?</summary>
-          <p>In der Regel melden wir uns innerhalb von 24 Stunden bei Ihnen und vereinbaren zeitnah einen Besichtigungstermin.</p>
-        </details>
+      <div class="container faq">
+        <h2 class="split-title">Häufige Fragen</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Wo sind Sie unterwegs?</summary>
+            <p>In [Ort] und im Umkreis von etwa [XX] km. Bei größeren Projekten fahren wir auch weiter.</p>
+          </details>
+          <details>
+            <summary>Kostet das Angebot etwas?</summary>
+            <p>Nein. Besichtigung und Angebot sind kostenlos und unverbindlich.</p>
+          </details>
+          <details>
+            <summary>Kommen Sie auch für Kleinigkeiten?</summary>
+            <p>Ja. Eine zusätzliche Steckdose oder eine neue Lampe ist für uns kein zu kleiner Auftrag.</p>
+          </details>
+          <details>
+            <summary>Melden Sie Wallbox oder PV beim Netzbetreiber an?</summary>
+            <p>Ja, das übernehmen wir als eingetragener Installateur für Sie.</p>
+          </details>
+          <details>
+            <summary>Wie schnell bekomme ich einen Termin?</summary>
+            <p>Wir melden uns in der Regel innerhalb von 24 Stunden. Bei Störungen versuchen wir, noch am selben Tag zu kommen.</p>
+          </details>
+        </div>
       </div>
     </section>
 
-    <!-- ===== Kontakt ===== -->
-    <section class="section section-alt" id="kontakt">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">Kontakt</p>
-          <h2>Wir freuen uns auf Ihre Anfrage</h2>
-          <p>Schreiben Sie uns oder rufen Sie an – wir melden uns schnellstmöglich zurück.</p>
+    <!-- Kontakt -->
+    <section class="section section-dark" id="kontakt">
+      <div class="container contact">
+        <div class="contact-info">
+          <h2 class="split-title">Schreiben Sie uns.</h2>
+          <p>Kurz beschreiben, was ansteht – wir melden uns.</p>
+
+          <div class="person">
+            <span class="person-label">Ansprechpartner</span>
+            <strong>Samuel Foth</strong>
+          </div>
 
           <ul class="contact-list">
-            <li><span>📍</span> [Straße Hausnummer]<br>[PLZ Ort]</li>
-            <li><span>📞</span> <a href="tel:+490000000000">0000 / 000 000</a></li>
-            <li><span>✉️</span> <a href="mailto:info@elektro-linge.de">info@elektro-linge.de</a></li>
-            <li><span>🕒</span> Mo – Fr: 7:00 – 17:00 Uhr<br>Sa: nach Vereinbarung</li>
+            <li><span class="label">Telefon</span><a href="tel:+490000000000">0000 / 000 000</a></li>
+            <li><span class="label">E-Mail</span><a href="mailto:samuel.foth@elektro-linge.de">samuel.foth@elektro-linge.de</a></li>
+            <li><span class="label">Adresse</span>[Straße Hausnummer], [PLZ Ort]</li>
+            <li><span class="label">Erreichbar</span>Mo–Fr 7–17 Uhr, Sa nach Absprache</li>
           </ul>
         </div>
 
         <form class="contact-form" id="contact-form" novalidate>
+          <!-- Spam-Schutz: dieses Feld bleibt für Menschen unsichtbar -->
+          <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off">
+
           <div class="field">
+            <input id="name" name="name" type="text" autocomplete="name" placeholder=" " required>
             <label for="name">Name *</label>
-            <input id="name" name="name" type="text" autocomplete="name" required>
           </div>
           <div class="field-row">
             <div class="field">
+              <input id="email" name="email" type="email" autocomplete="email" placeholder=" " required>
               <label for="email">E-Mail *</label>
-              <input id="email" name="email" type="email" autocomplete="email" required>
             </div>
             <div class="field">
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder=" ">
               <label for="phone">Telefon</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel">
             </div>
           </div>
           <div class="field">
-            <label for="topic">Anliegen</label>
             <select id="topic" name="topic">
               <option>Elektroinstallation</option>
               <option>Altbausanierung</option>
@@ -292,37 +279,33 @@
               <option>Reparatur / Störung</option>
               <option>Sonstiges</option>
             </select>
+            <label for="topic" class="static">Worum geht es?</label>
           </div>
           <div class="field">
-            <label for="message">Nachricht *</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+            <label for="message">Ihre Nachricht *</label>
           </div>
           <label class="checkbox">
-            <input type="checkbox" name="privacy" required>
-            <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung der Anfrage zu. *</span>
+            <input type="checkbox" name="datenschutz" value="akzeptiert" required>
+            <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. *</span>
           </label>
-          <button type="submit" class="btn btn-full">Anfrage senden</button>
+          <button type="submit" class="btn btn-yellow btn-full">Anfrage senden <span class="arrow">→</span></button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- ===== Footer ===== -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>
-        <a href="#top" class="brand">
-          <img src="assets/logo.svg" alt="" width="32" height="32">
-          <span>Elektro <strong>Linge</strong></span>
-        </a>
-        <p>Ihr Fachbetrieb für Elektroinstallationen.</p>
+      <p class="footer-big">ELEKTRO LINGE</p>
+      <div class="footer-row">
+        <p>© <span id="year">2026</span> Elektro Linge · Elektroinstallationen</p>
+        <nav aria-label="Rechtliches">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </nav>
       </div>
-      <nav aria-label="Rechtliches">
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-      </nav>
-      <p class="copy">© <span id="year">2026</span> Elektro Linge</p>
     </div>
   </footer>
 
