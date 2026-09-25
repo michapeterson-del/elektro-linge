@@ -27,6 +27,8 @@ die Anfrage per E-Mail-Programm zu senden.
 
 ## Fotos
 
+Eigene/heruntergeladene Fotos liegen in `assets/img/` (Elektroinstallation, Altbausanierung, Wallbox, Smart Home, Beleuchtung – von Pexels, freie Lizenz).
+
 Die Fotos kommen im Moment von Unsplash und Pexels (freie Lizenzen) und werden per Link geladen.
 Lädt ein Bild nicht, erscheint eine gestreifte Ersatzfläche. **Besser: eigene Fotos** (Baustelle,
 Team, Auto, Zählerschrank) nach `assets/img/` legen und die `src`- bzw. `data-img`-Adressen in
