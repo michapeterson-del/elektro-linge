@@ -151,6 +151,22 @@ if (form) {
     const data = Object.fromEntries(new FormData(form));
     if (data._honey) return; // Spam-Bot
 
+    const showError = (text) => {
+      status.className = "form-status err";
+      status.replaceChildren(`${text} `);
+      const a = document.createElement("a");
+      a.href = mailtoFallback(data);
+      a.textContent = "Anfrage stattdessen per E-Mail senden";
+      a.style.color = "inherit";
+      status.append(a);
+    };
+
+    // FormSubmit funktioniert nur, wenn die Seite über einen Webserver aufgerufen wird
+    if (location.protocol === "file:") {
+      showError("Das Formular funktioniert erst, wenn die Website online ist (nicht als lokal geöffnete Datei).");
+      return;
+    }
+
     button.disabled = true;
     setStatus("Wird gesendet …", "");
 
@@ -171,19 +187,23 @@ if (form) {
         }),
       });
       const json = await res.json().catch(() => ({}));
-      if (!res.ok || String(json.success) !== "true") throw new Error(json.message || res.statusText);
+      const msg = String(json.message || "");
 
-      form.reset();
-      setStatus("Danke! Ihre Anfrage ist angekommen – wir melden uns schnellstmöglich.", "ok");
+      if (res.ok && String(json.success) === "true") {
+        form.reset();
+        setStatus("Danke! Ihre Anfrage ist angekommen – wir melden uns schnellstmöglich.", "ok");
+      } else if (/activat/i.test(msg)) {
+        // Erstes Absenden: FormSubmit hat eine Aktivierungs-Mail an CONTACT_EMAIL geschickt
+        setStatus(`Fast geschafft: Das Formular muss einmalig aktiviert werden. Bitte im Postfach von ${CONTACT_EMAIL} auf „Activate Form“ klicken und dann erneut senden.`, "err");
+      } else if (/web server|HTML files/i.test(msg)) {
+        showError("Das Formular funktioniert erst, wenn die Website online ist (nicht als lokal geöffnete Datei).");
+      } else {
+        console.warn("Formularversand fehlgeschlagen:", res.status, msg);
+        showError(`Das hat leider nicht geklappt${msg ? ` (${msg})` : ""}.`);
+      }
     } catch (err) {
-      status.className = "form-status err";
-      status.innerHTML = "";
-      status.append("Das hat leider nicht geklappt. ");
-      const a = document.createElement("a");
-      a.href = mailtoFallback(data);
-      a.textContent = "Anfrage stattdessen per E-Mail senden";
-      a.style.color = "inherit";
-      status.append(a);
+      console.warn("Formularversand fehlgeschlagen:", err);
+      showError("Das hat leider nicht geklappt – keine Verbindung zum Mail-Dienst.");
     } finally {
       button.disabled = false;
     }
