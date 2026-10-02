@@ -138,25 +138,68 @@ if ("IntersectionObserver" in window && !reduceMotion) {
   inViewTargets.forEach(reveal);
 }
 
-// ---------- Leistungen: Foto klappt rechts neben der Zeile auf ----------
-if (finePointer) {
-  document.querySelector(".service-list")?.classList.add("thumbs");
-  document.querySelectorAll(".service[data-img]").forEach((row) => {
+// ---------- Leistungen: Fotos ----------
+// Desktop mit Maus: klappt beim Drüberfahren auf. Handy/Tablet: immer sichtbar (siehe CSS).
+const serviceList = document.querySelector(".service-list");
+if (serviceList) {
+  serviceList.classList.add("thumbs");
+  const rows = serviceList.querySelectorAll(".service[data-img]");
+  rows.forEach((row) => {
     const thumb = document.createElement("div");
     thumb.className = "service-thumb";
     thumb.setAttribute("aria-hidden", "true");
+    const img = new Image();
+    img.alt = "";
+    img.loading = "lazy";
+    img.onerror = () => thumb.remove();
+    img.src = row.dataset.img;
+    thumb.append(img);
     row.append(thumb);
-    // Bild erst beim ersten Hover laden
-    row.addEventListener("mouseenter", () => {
-      if (thumb.firstChild) return;
-      const img = new Image();
-      img.alt = "";
-      img.onerror = () => thumb.remove();
-      img.src = row.dataset.img;
-      thumb.append(img);
-    }, { once: true });
   });
+
+  // Foto beim Hineinscrollen aufklappen lassen
+  if ("IntersectionObserver" in window && !reduceMotion) {
+    const rowIO = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("in"); rowIO.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
+    rows.forEach((r) => rowIO.observe(r));
+  } else {
+    rows.forEach((r) => r.classList.add("in"));
+  }
 }
+
+// ---------- FAQ: weich auf- und zuklappen ----------
+document.querySelectorAll(".faq-list details").forEach((det) => {
+  const summary = det.querySelector("summary");
+  let anim = null;
+
+  summary.addEventListener("click", (e) => {
+    if (reduceMotion) { det.classList.toggle("is-open", !det.open); return; }
+    e.preventDefault();
+    const startH = det.offsetHeight; // vor cancel messen, falls gerade eine Animation läuft
+    if (anim) anim.cancel();
+
+    const closedH = summary.offsetHeight;
+    const opening = !det.open || det.classList.contains("closing");
+    det.classList.toggle("is-open", opening);
+    det.classList.toggle("closing", !opening);
+
+    if (opening) det.open = true;
+    const endH = opening ? det.scrollHeight : closedH;
+
+    anim = det.animate(
+      { height: [`${startH}px`, `${endH}px`] },
+      { duration: 380, easing: "cubic-bezier(.2,.7,.1,1)" }
+    );
+    anim.onfinish = () => {
+      anim = null;
+      if (!opening) { det.open = false; det.classList.remove("closing"); }
+    };
+    anim.oncancel = () => { anim = null; };
+  });
+});
 
 // ---------- Kontaktformular ----------
 const form = document.getElementById("contact-form");
