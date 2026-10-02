@@ -452,7 +452,10 @@ details p { color: var(--muted); padding-right: 3rem; animation: fadeUp .45s var
 
 .post-list { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
 .post-list li { border-bottom: 1px solid var(--line); }
-.post-list a { display: grid; grid-template-columns: 140px 1fr; gap: 1.5rem; padding: 1.8rem 0; text-decoration: none; transition: padding .3s var(--ease); }
+.post-list a { display: grid; grid-template-columns: 240px 1fr; gap: 1.8rem; align-items: start; padding: 1.8rem 0; text-decoration: none; transition: padding .3s var(--ease); }
+.post-list img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.post-list .tag { margin: 0 .6rem .6rem 0; }
+.post-list .post-meta { display: inline-block; padding: 0; }
 .post-list a:hover { padding-left: .8rem; }
 .post-list a:hover h2 { color: #000; text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 3px; text-underline-offset: 4px; }
 .post-meta { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding-top: .35rem; }
