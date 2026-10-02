@@ -56,6 +56,34 @@ const setNav = (open) => {
 toggle?.addEventListener("click", () => setNav(!nav.classList.contains("open")));
 nav?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setNav(false)));
 
+// ---------- Sprungmarken ohne #… in der Adresszeile ----------
+const onHome = document.querySelector("main .hero") !== null;
+const cleanUrl = () => history.replaceState(null, "", location.pathname.replace(/index\.html$/, ""));
+
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("a[href]");
+  if (!link || !onHome) return;
+  const href = link.getAttribute("href");
+  const behavior = reduceMotion ? "auto" : "smooth";
+
+  if (href === "/") {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior });
+    cleanUrl();
+  } else if (href.startsWith("#") && href.length > 1) {
+    const target = document.querySelector(href);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior });
+    cleanUrl();
+  }
+});
+
+// Alte Links mit #… oder index.html aufräumen
+if (onHome && (location.hash || location.pathname.endsWith("index.html"))) {
+  window.addEventListener("load", () => setTimeout(cleanUrl, 50));
+}
+
 let ticking = false;
 window.addEventListener("scroll", () => {
   if (ticking) return;
