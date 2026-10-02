@@ -43,6 +43,22 @@ Platzhalter stehen in eckigen Klammern `[...]` bzw. als `0000 / 000 000`:
 - Impressum: Inhaber, USt-ID, Handwerkskammer, Handwerksrolle, Installateurverzeichnis, Versicherung
 - Datenschutz: Hosting-Anbieter; rechtlich prüfen lassen
 
+## Beiträge (Blog)
+
+Beiträge liegen unter `beitraege/<name>/index.html` und sind unter `elektrolinge.de/beitraege/<name>/` erreichbar.
+
+Neuen Beitrag anlegen:
+1. Einen vorhandenen Beitragsordner kopieren (z. B. `beitraege/wallbox-anmelden/`) und umbenennen – nur Kleinbuchstaben und Bindestriche.
+2. In der neuen `index.html` Titel, Beschreibung (`description`, `og:…`), Datum, Text und den Block `application/ld+json` anpassen.
+3. Den Beitrag in `beitraege/index.html` in die Liste eintragen.
+4. Die Adresse in `sitemap.xml` ergänzen.
+
+## SEO
+
+- `sitemap.xml` und `robots.txt` im Hauptordner – Sitemap in der Google Search Console einreichen.
+- Firmendaten für Google (schema.org „Electrician“) stehen im `<head>` der Startseite. Die Telefonnummer dort ergänzen (`"telephone": "+49 …"`), sobald es sie gibt.
+- Vorschaubild für WhatsApp/Facebook: `assets/og-bild.jpg` (1200 × 630).
+
 ## Lokal ansehen
 
 ```bash

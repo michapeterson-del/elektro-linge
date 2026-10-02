@@ -84,7 +84,7 @@ p { margin: 0 0 1em; }
   background: var(--yellow); transform: scaleX(0); transform-origin: right; transition: transform .3s var(--ease);
 }
 .main-nav a:not(.nav-cta):hover::after { transform: scaleX(1); transform-origin: left; }
-.nav-cta { padding: .55em 1.1em; border: 1.5px solid var(--yellow); color: var(--yellow); transition: background .2s, color .2s; }
+.nav-cta { text-decoration: none; padding: .55em 1.1em; border: 1.5px solid var(--yellow); color: var(--yellow); transition: background .2s, color .2s; }
 .nav-cta:hover { background: var(--yellow); color: var(--ink); }
 
 .nav-toggle { display: none; background: none; border: 0; padding: 10px; cursor: pointer; }
@@ -305,7 +305,7 @@ details p { color: var(--muted); padding-right: 3rem; animation: fadeUp .45s var
   align-items: start;
 }
 .contact-head { grid-area: head; }
-.contact-info { grid-area: info; }
+.contact-info { grid-area: info; margin-top: .5rem; }
 .contact-form { grid-area: form; }
 .contact-head .split-title { margin-bottom: 1rem; }
 .person { margin: 1.5rem 0 2rem; padding-left: 1rem; border-left: 3px solid var(--yellow); }
@@ -438,4 +438,49 @@ details p { color: var(--muted); padding-right: 3rem; animation: fadeUp .45s var
   .contact-list li { grid-template-columns: 92px 1fr; gap: .6rem; padding: .55rem 0; font-size: .95rem; }
   .contact-list .label { font-size: .7rem; padding-top: .3em; }
   .ticker span { font-size: 1.2rem; }
+}
+
+/* ============ Beiträge ============ */
+.blog-page .site-header { background: var(--ink); }
+.blog-head { display: flex; align-items: center; gap: 1.6rem; }
+.blog-head a:not(.nav-cta) { text-decoration: none; font-weight: 500; font-size: .95rem; }
+.blog-head a:not(.nav-cta):hover { color: var(--yellow); }
+.blog { padding: 150px 0 100px; }
+.blog .container { max-width: 860px; }
+.blog h1 { font: 700 clamp(2.4rem, 6vw, 4.2rem) / 1 var(--display); text-transform: uppercase; margin-bottom: 1rem; }
+.blog-intro { color: var(--muted); font-size: 1.1rem; max-width: 36em; margin-bottom: 3rem; }
+
+.post-list { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.post-list li { border-bottom: 1px solid var(--line); }
+.post-list a { display: grid; grid-template-columns: 140px 1fr; gap: 1.5rem; padding: 1.8rem 0; text-decoration: none; transition: padding .3s var(--ease); }
+.post-list a:hover { padding-left: .8rem; }
+.post-list a:hover h2 { color: #000; text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 3px; text-underline-offset: 4px; }
+.post-meta { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding-top: .35rem; }
+.post-list h2 { font: 700 clamp(1.4rem, 3vw, 1.9rem) / 1.1 var(--display); text-transform: uppercase; margin-bottom: .5rem; }
+.post-list p { margin: 0; color: var(--muted); }
+
+.tag { display: inline-block; background: var(--yellow); color: var(--ink); font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: .25em .6em; margin-bottom: 1rem; }
+.back-link { display: inline-block; margin-bottom: 2rem; color: var(--muted); text-decoration: none; font-size: .95rem; }
+.back-link:hover { color: var(--ink); }
+
+.post { max-width: 720px; }
+.post h1 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); }
+.post .post-meta { display: block; margin-bottom: 2rem; padding: 0; }
+.post-figure { margin: 0 0 2.2rem; }
+.post-figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.post-figure figcaption { font-size: .8rem; color: var(--muted); margin-top: .4rem; }
+.post .lead { font-size: 1.2rem; color: var(--ink); }
+.post h2 { font: 700 1.6rem / 1.15 var(--display); text-transform: uppercase; margin: 2.4rem 0 .8rem; }
+.post ul { padding-left: 1.2rem; margin: 0 0 1.2rem; }
+.post li { margin-bottom: .4rem; }
+.post li::marker { color: var(--yellow-2); }
+.post .note { font-size: .9rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1rem; margin-top: 2.5rem; }
+.post-cta { background: var(--ink); color: rgba(255,255,255,.85); padding: 2rem; margin-top: 3rem; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.post-cta strong { display: block; font: 700 1.5rem var(--display); text-transform: uppercase; color: var(--white); }
+
+@media (max-width: 760px) {
+  .blog { padding: 120px 0 70px; }
+  .blog-head a:not(.nav-cta) { display: none; }
+  .blog-head .nav-cta { font-size: .9rem !important; }
+  .post-list a { grid-template-columns: 1fr; gap: .3rem; }
 }
