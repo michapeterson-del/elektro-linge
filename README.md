@@ -56,7 +56,7 @@ Neuen Beitrag anlegen:
 ## SEO
 
 - `sitemap.xml` und `robots.txt` im Hauptordner – Sitemap in der Google Search Console einreichen.
-- Firmendaten für Google (schema.org „Electrician“) stehen im `<head>` der Startseite. Die Telefonnummer dort ergänzen (`"telephone": "+49 …"`), sobald es sie gibt.
+- Firmendaten für Google (schema.org „Electrician“) stehen im `<head>` der Startseite.
 - Vorschaubild für WhatsApp/Facebook: `assets/og-bild.jpg` (1200 × 630).
 
 ## Lokal ansehen
