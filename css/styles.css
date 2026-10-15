@@ -663,3 +663,6 @@ details p { color: var(--muted); padding-right: 3rem; margin: 0; padding-bottom:
 .pv-more:hover { color: var(--yellow); }
 @media (max-width: 1000px) { .pv-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
 @media (max-width: 760px) { .pv-lead { font-size: 1rem; } .pv-actions .btn { width: 100%; } }
+.timeline p a { color: var(--ink); text-decoration-color: var(--yellow); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.form-hint { margin: -.6rem 0 1rem; font-size: .82rem; color: rgba(255,255,255,.55); }
+.form-hint a { color: var(--yellow); }
