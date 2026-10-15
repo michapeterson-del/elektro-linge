@@ -586,3 +586,29 @@ details p { color: var(--muted); padding-right: 3rem; margin: 0; padding-bottom:
 .wa-start:hover { background: #1ebe5b; }
 .wa-note { margin: 0 1.1rem 1rem; font-size: .75rem; color: var(--muted); text-align: center; }
 @media (max-width: 760px) { .wa-panel { right: 14px; bottom: 82px; } }
+
+/* ============ Vertrauen ============ */
+.trustbar { background: var(--ink-2); color: #fff; border-top: 1px solid rgba(255,255,255,.08); }
+.trustbar-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding: 1.6rem 0; }
+.trust-item { display: flex; gap: .8rem; align-items: flex-start; }
+.trust-item svg { color: var(--yellow); flex: none; margin-top: 2px; }
+.trust-item strong { display: block; font-size: .95rem; line-height: 1.3; }
+.trust-item span { display: block; font-size: .82rem; line-height: 1.35; margin-top: .15rem; color: rgba(255,255,255,.6); }
+
+.promise { background: var(--white); }
+.promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.promise-card { border-top: 3px solid var(--yellow); padding: 1.5rem 0 0; }
+.promise-num { font: 600 .9rem var(--display); color: var(--muted); }
+.promise-card h3 { font: 700 1.5rem var(--display); text-transform: uppercase; margin: .3rem 0 .6rem; }
+.promise-card p { color: var(--muted); margin: 0; }
+
+@media (max-width: 1000px) {
+  .trustbar-inner { grid-template-columns: repeat(2, 1fr); }
+  .promise-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .trustbar-inner { grid-template-columns: 1fr 1fr; gap: 1.1rem; padding: 1.3rem 0; }
+  .trust-item strong { font-size: .85rem; }
+  .trust-item span { font-size: .75rem; }
+  .promise-grid { grid-template-columns: 1fr; gap: 1rem; }
+}
