@@ -24,6 +24,8 @@
       <button type="button" class="wa-close" aria-label="Chatfenster schließen">&times;</button>
     </div>
     <div class="wa-body">
+      <div class="wa-time"></div>
+      <div class="wa-typing" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="wa-bubble">
         Hallo!<br><br>
         Hier ist Elektro Linge, Ihr Elektrofachbetrieb aus Marienheide.<br><br>
@@ -35,8 +37,26 @@
   `;
   document.body.append(panel);
 
+  const typing = panel.querySelector(".wa-typing");
+  const bubble = panel.querySelector(".wa-bubble");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let greeted = false;
+
+  // Beim ersten Öffnen: Uhrzeit, kurz "tippt …", dann erscheint die Nachricht
+  const greet = () => {
+    const now = new Date();
+    panel.querySelector(".wa-time").textContent =
+      now.getHours().toString().padStart(2, "0") + ":" + now.getMinutes().toString().padStart(2, "0");
+    if (greeted || reduceMotion) { typing.hidden = true; bubble.classList.add("show"); greeted = true; return; }
+    greeted = true;
+    typing.hidden = false;
+    bubble.classList.remove("show");
+    setTimeout(() => { typing.hidden = true; bubble.classList.add("show"); }, 1600);
+  };
+
   const setOpen = (open) => {
     panel.hidden = !open;
+    if (open) greet();
     btn.setAttribute("aria-expanded", String(open));
     if (open) {
       btn.classList.remove("wa-unread");

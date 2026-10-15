@@ -632,3 +632,14 @@ details p { color: var(--muted); padding-right: 3rem; margin: 0; padding-bottom:
   .hero-actions { margin-top: 1.4rem; }
   .hero-wire { bottom: 12px; height: 50px; }
 }
+.wa-time { text-align: center; font-size: .7rem; color: var(--muted); margin-bottom: .6rem; }
+.wa-typing { display: inline-flex; gap: 4px; padding: .7rem .9rem; background: #fff; border-radius: 0 12px 12px 12px; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+.wa-typing[hidden] { display: none; }
+.wa-typing span { width: 7px; height: 7px; border-radius: 50%; background: #9a958c; animation: waDot 1.1s infinite ease-in-out; }
+.wa-typing span:nth-child(2) { animation-delay: .15s; }
+.wa-typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes waDot { 0%, 60%, 100% { transform: translateY(0); opacity: .5; } 30% { transform: translateY(-4px); opacity: 1; } }
+.wa-bubble { display: none; }
+.wa-bubble.show { display: block; animation: waMsg .35s var(--ease); }
+@keyframes waMsg { from { opacity: 0; transform: translateY(8px) scale(.97); } to { opacity: 1; transform: none; } }
+.wa-body { min-height: 270px; }
