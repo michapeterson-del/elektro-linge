@@ -613,3 +613,22 @@ details p { color: var(--muted); padding-right: 3rem; margin: 0; padding-bottom:
   .trust-item span { font-size: .75rem; }
   .promise-grid { grid-template-columns: 1fr; gap: 1rem; }
 }
+
+/* ============ Startbereich am Handy: Foto oben, Text darunter ============ */
+@media (max-width: 760px) {
+  .hero { display: block; min-height: 0; padding: 0 0 84px; }
+  .hero-media { position: relative; inset: auto; height: 52svh; min-height: 300px; transform: none !important; }
+  .hero-media img { object-position: 80% 25%; }
+  .hero-shade {
+    inset: 0 0 auto 0; height: 52svh; min-height: 300px;
+    background:
+      linear-gradient(180deg, rgba(10,10,10,.55) 0%, transparent 28%),
+      linear-gradient(0deg, var(--ink) 0%, transparent 40%);
+  }
+  .hero-inner { margin-top: -2.5rem; }
+  .hero-kicker { font-size: .72rem; margin-bottom: .9rem; }
+  .hero-title { font-size: 2.6rem; margin-bottom: 1.1rem; }
+  .hero-lead { font-size: 1rem; }
+  .hero-actions { margin-top: 1.4rem; }
+  .hero-wire { bottom: 12px; height: 50px; }
+}
