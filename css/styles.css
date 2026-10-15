@@ -112,7 +112,7 @@ p { margin: 0 0 1em; }
   background: var(--ink);
 }
 .hero-media { position: absolute; inset: -10% 0 0; }
-.hero-media img { animation: heroZoom 2.4s var(--ease) both; }
+.hero-media img { object-position: 72% center; animation: heroZoom 2.4s var(--ease) both; }
 @keyframes heroZoom { from { transform: scale(1.15); filter: brightness(.4); } to { transform: scale(1); filter: brightness(1); } }
 .hero-shade {
   position: absolute; inset: 0;
@@ -586,6 +586,7 @@ details p { color: var(--muted); padding-right: 3rem; margin: 0; padding-bottom:
 .wa-start:hover { background: #1ebe5b; }
 .wa-note { margin: 0 1.1rem 1rem; font-size: .75rem; color: var(--muted); text-align: center; }
 @media (max-width: 760px) { .wa-panel { right: 14px; bottom: 82px; } }
+@media (max-width: 760px) { .hero-media img { object-position: 82% center; } }
 
 /* ============ Vertrauen ============ */
 .trustbar { background: var(--ink-2); color: #fff; border-top: 1px solid rgba(255,255,255,.08); }
