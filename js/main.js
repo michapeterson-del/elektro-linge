@@ -292,3 +292,11 @@ if (form) {
     })
   );
 }
+
+// ---------- Links mit data-topic wählen im Formular das passende Anliegen vor ----------
+document.querySelectorAll("[data-topic]").forEach((link) =>
+  link.addEventListener("click", () => {
+    const select = document.getElementById("topic");
+    if (select) select.value = link.dataset.topic;
+  })
+);

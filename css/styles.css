@@ -643,3 +643,23 @@ details p { color: var(--muted); padding-right: 3rem; margin: 0; padding-bottom:
 .wa-bubble.show { display: block; animation: waMsg .35s var(--ease); }
 @keyframes waMsg { from { opacity: 0; transform: translateY(8px) scale(.97); } to { opacity: 1; transform: none; } }
 .wa-body { min-height: 270px; }
+
+/* ============ Photovoltaik-Schwerpunkt ============ */
+.pv { background: var(--ink); color: rgba(255,255,255,.82); }
+.pv h2 { color: var(--white); }
+.pv-inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 4.5rem; align-items: center; }
+#photovoltaik { padding-top: 90px; }
+@media (max-width: 760px) { #photovoltaik { padding-top: 40px; } }
+.pv-media { aspect-ratio: 4 / 3; }
+.pv-kicker { font: 600 .85rem var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--yellow); margin-bottom: .8rem; }
+.pv .split-title { margin-bottom: 1.2rem; }
+.pv-lead { font-size: 1.1rem; }
+.pv-list { list-style: none; padding: 0; margin: 1.6rem 0 2rem; display: grid; gap: .8rem; }
+.pv-list li { display: flex; gap: .7rem; align-items: flex-start; }
+.pv-list svg { color: var(--yellow); flex: none; margin-top: 3px; }
+.pv-list strong { color: var(--white); }
+.pv-actions { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; }
+.pv-more { color: var(--white); text-decoration: underline; text-decoration-color: var(--yellow); text-underline-offset: 4px; }
+.pv-more:hover { color: var(--yellow); }
+@media (max-width: 1000px) { .pv-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+@media (max-width: 760px) { .pv-lead { font-size: 1rem; } .pv-actions .btn { width: 100%; } }
