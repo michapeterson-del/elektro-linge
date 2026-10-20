@@ -7,8 +7,8 @@ Kein Build-Schritt nötig – einfach `index.html` im Browser öffnen oder den O
 
 ```
 index.html        Startseite (Leistungen, Über uns, Ablauf, FAQ, Kontakt)
-impressum.html    Impressum (Vorlage)
-datenschutz.html  Datenschutzerklärung (Vorlage)
+impressum/        Impressum
+datenschutz/      Datenschutzerklärung
 css/styles.css    Gestaltung (responsive)
 js/main.js        Animationen, Navigation, Kontaktformular (Versand)
 assets/logo-mark-white.png / logo-mark-navy.png   Logo-Zeichen (Lingese mit Blitz)
