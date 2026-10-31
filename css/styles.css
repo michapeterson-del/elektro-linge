@@ -258,7 +258,7 @@ p { margin: 0 0 1em; }
 
 /* ============ Betrieb ============ */
 .about { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-.about-media { position: relative; padding: 0 12% 18% 0; }
+.about-media { position: relative; }
 .photo-a { aspect-ratio: 4 / 5; }
 .about-badge {
   position: absolute; right: 0; bottom: 0;
