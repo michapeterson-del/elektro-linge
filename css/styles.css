@@ -675,3 +675,70 @@ details p { color: var(--muted); padding-right: 3rem; margin: 0; padding-bottom:
 .timeline p a { color: var(--ink); text-decoration-color: var(--yellow); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .form-hint { margin: -.6rem 0 1rem; font-size: .82rem; color: rgba(255,255,255,.55); }
 .form-hint a { color: var(--yellow); }
+
+/* ============ Helle Bereiche, runde Ecken, große Tippflächen ============ */
+:root { --radius-card: 24px; --radius-inner: 12px; --tap: 44px; --line-soft: #e5e5ea; }
+
+/* Buttons: Kapselform, mind. 44px hoch, Press-State */
+.btn { border-radius: 9999px; min-height: var(--tap); padding: .9em 1.6em; }
+.btn:active { opacity: .7; }
+
+/* Fotos & Karten rund */
+.photo, .pv-media, .service-thumb, .post-figure img { border-radius: var(--radius-card); overflow: hidden; }
+
+/* Leistungen: hell, als Kartenraster */
+#leistungen { background: #fff; }
+#leistungen .service-list { border-top: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+#leistungen .service { display: flex; flex-direction: column; gap: .4rem; padding: 0; border: 0; background: var(--paper); border-radius: var(--radius-card); overflow: hidden; }
+#leistungen .service::before { display: none; }
+#leistungen .service .num { display: none; }
+#leistungen .service h3 { font-size: 1.45rem; padding: 1.2rem 1.4rem 0; }
+#leistungen .service p { padding: 0 1.4rem 1.4rem; font-size: .98rem; }
+#leistungen .service:hover h3 { transform: none; }
+#leistungen .service-thumb { order: -1; width: 100% !important; opacity: 1 !important; clip-path: none !important; transform: none !important; box-shadow: none !important; border-radius: 0; aspect-ratio: 3 / 2; }
+#leistungen .service-thumb img { transform: none !important; }
+@media (max-width: 1000px) { #leistungen .service-list { grid-template-columns: 1fr 1fr; } }
+
+
+/* Versprechen: weiße Karten auf hellem Grund */
+.promise { background: var(--paper); }
+.promise-card { background: #fff; border-top: 0; border-radius: var(--radius-card); padding: 1.6rem; }
+.promise-num { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--yellow); color: var(--ink); }
+.review-box { border-left: 0; border-radius: var(--radius-card); background: #fff; }
+
+/* FAQ in runder Karte */
+#faq .faq-list { border-top: 0; background: #fff; border-radius: var(--radius-card); padding: 0 1.6rem; }
+#faq { background: var(--paper); }
+
+/* Kontakt: hell, Formular als Karte mit gefüllten Feldern */
+#kontakt { background: var(--paper); color: var(--ink); }
+#kontakt h2 { color: var(--ink); }
+#kontakt .contact-head p { color: var(--muted); }
+.contact-list { background: #fff; border-radius: var(--radius-card); padding: .4rem 1.4rem; }
+.contact-list li { border-bottom: 1px solid var(--line-soft); min-height: var(--tap); align-items: center; }
+.contact-list li:last-child { border-bottom: 0; }
+.contact-list .label { color: var(--muted); }
+.contact-list a { color: var(--ink); font-weight: 600; }
+.contact-list li { color: var(--ink); }
+.contact-form { background: #fff; border: 0; border-radius: var(--radius-card); padding: 1.6rem; }
+.field input, .field textarea, .field select { color: var(--ink); background-color: var(--paper); border: 0; border-radius: var(--radius-inner); padding: 1.5rem 1rem .5rem; min-height: 56px; }
+.field select { background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23141414' stroke-width='2'/%3E%3C/svg%3E") right 16px center no-repeat; }
+.field label { left: 1rem; top: 1.05rem; color: var(--muted); }
+.field input:focus + label, .field input:not(:placeholder-shown) + label,
+.field textarea:focus + label, .field textarea:not(:placeholder-shown) + label,
+.field label.static { transform: translateY(-.6rem) scale(.78); color: var(--muted); }
+.field input:focus, .field textarea:focus, .field select:focus { box-shadow: 0 0 0 2px var(--yellow); }
+.checkbox { color: var(--muted); }
+.checkbox a { color: var(--ink); }
+.form-hint { color: var(--muted); }
+.form-hint a { color: var(--ink); text-decoration-color: var(--yellow); }
+.contact-form .btn-yellow { background: var(--ink); color: #fff; }
+@media (max-width: 640px) {
+  #leistungen .service-list { grid-template-columns: 1fr 1fr; gap: 12px; }
+  #leistungen .service { border-radius: 18px; }
+  #leistungen .service h3 { font-size: .95rem; padding: .8rem .85rem 0; hyphens: auto; overflow-wrap: anywhere; }
+  #leistungen .service p { font-size: .84rem; line-height: 1.45; padding: 0 .85rem .9rem; }
+  .promise-card { padding: 1.3rem; }
+  .contact-form { padding: 1.1rem; }
+  .contact-list { padding: .2rem 1.1rem; }
+}
