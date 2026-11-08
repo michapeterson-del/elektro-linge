@@ -3,6 +3,8 @@
 // Adresse – den Link darin einmal anklicken, danach kommen alle Anfragen an.
 const CONTACT_EMAIL = "info@elektro-linge.de";
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
+// Jede Anfrage geht zusätzlich als Lead ins ERP (Repo elektro-linge-erp). Leer lassen = abgeschaltet.
+const ERP_LEADS_ENDPOINT = "https://erp-elektrolinge.micha-apps.de/api/leads";
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -245,6 +247,11 @@ if (form) {
 
     button.disabled = true;
     setStatus("Wird gesendet …", "");
+
+    // Zusätzlich ans ERP – läuft unabhängig von der E-Mail, Fehler hier stören den Versand nicht
+    if (ERP_LEADS_ENDPOINT) {
+      fetch(ERP_LEADS_ENDPOINT, { method: "POST", body: new URLSearchParams(data), keepalive: true }).catch(() => {});
+    }
 
     try {
       const res = await fetch(FORM_ENDPOINT, {
