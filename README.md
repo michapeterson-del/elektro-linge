@@ -65,3 +65,9 @@ Neuen Beitrag anlegen:
 python3 -m http.server 8000
 # dann http://localhost:8000 öffnen
 ```
+
+## Referenzen
+
+Die Seite `referenzen/index.html` zeigt echte Fotos von Baustellen, die Startseite eine kurze Bildreihe daraus (`#referenzen`).
+Fotos liegen in `assets/img/referenzen/` jeweils zweimal: `<name>.jpg` (groß, max. 1600 px) und `<name>-klein.jpg` (800×600, Ausschnitt 4:3).
+Vor dem Hochladen GPS-/EXIF-Daten entfernen und auf Hausnummern, Kennzeichen und Gesichter achten.
