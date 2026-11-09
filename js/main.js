@@ -210,8 +210,12 @@ if (form) {
   const button = form.querySelector("button[type=submit]");
   const setStatus = (text, type) => { status.textContent = text; status.className = `form-status ${type}`; };
 
+  // Ein Feld für Telefon oder E-Mail: E-Mail erkennt man am @, Telefon an mindestens 6 Ziffern
+  const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+  const isPhone = (v) => /^[\d\s+()\/-]+$/.test(v.trim()) && v.replace(/\D/g, "").length >= 6;
+
   const mailtoFallback = (data) => {
-    const body = `Name: ${data.name}\nE-Mail: ${data.email}\nTelefon: ${data.phone || "-"}\nAnliegen: ${data.topic}\n\n${data.message}`;
+    const body = `Name: ${data.name}\nErreichbar unter: ${data.reach}\nAnliegen: ${data.topic}\n\n${data.message || ""}`;
     return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Anfrage: ${data.topic}`)}&body=${encodeURIComponent(body)}`;
   };
 
@@ -220,11 +224,12 @@ if (form) {
 
     let valid = true;
     form.querySelectorAll("[required]").forEach((field) => {
-      const ok = field.type === "checkbox" ? field.checked : field.checkValidity() && field.value.trim() !== "";
+      let ok = field.type === "checkbox" ? field.checked : field.checkValidity() && field.value.trim() !== "";
+      if (ok && field.name === "reach") ok = isEmail(field.value) || isPhone(field.value);
       (field.type === "checkbox" ? field.closest(".checkbox") : field).classList.toggle("invalid", !ok);
       if (!ok) valid = false;
     });
-    if (!valid) { setStatus("Bitte die markierten Felder ausfüllen.", "err"); return; }
+    if (!valid) { setStatus("Bitte die markierten Felder ausfüllen – Telefonnummer oder E-Mail-Adresse.", "err"); return; }
 
     const data = Object.fromEntries(new FormData(form));
     if (data._honey) return; // Spam-Bot
@@ -259,11 +264,11 @@ if (form) {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           Name: data.name,
-          "E-Mail": data.email,
-          Telefon: data.phone || "-",
+          "E-Mail": isEmail(data.reach) ? data.reach.trim() : "-",
+          Telefon: isEmail(data.reach) ? "-" : data.reach.trim(),
           Anliegen: data.topic,
-          Nachricht: data.message,
-          _replyto: data.email,
+          Nachricht: data.message || "-",
+          ...(isEmail(data.reach) ? { _replyto: data.reach.trim() } : {}),
           _subject: `Neue Anfrage über die Website: ${data.topic} – ${data.name}`,
           _template: "table",
           _captcha: "false",

@@ -734,10 +734,17 @@ details p { color: var(--muted); padding-right: 3rem; margin: 0; padding-bottom:
 .form-hint a { color: var(--ink); text-decoration-color: var(--yellow); }
 .contact-form .btn-yellow { background: var(--ink); color: #fff; }
 @media (max-width: 640px) {
-  #leistungen .service-list { grid-template-columns: 1fr 1fr; gap: 12px; }
-  #leistungen .service { border-radius: 18px; }
-  #leistungen .service h3 { font-size: .95rem; padding: .8rem .85rem 0; hyphens: auto; overflow-wrap: anywhere; }
-  #leistungen .service p { font-size: .84rem; line-height: 1.45; padding: 0 .85rem .9rem; }
+  /* Leistungen am Handy kompakt: 3 nebeneinander, nur Bild und Titel */
+  #leistungen .service-list { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  #leistungen .service { border-radius: 14px; }
+  #leistungen .service h3 { font-size: .78rem; line-height: 1.2; padding: .55rem .5rem .65rem; hyphens: auto; overflow-wrap: anywhere; }
+  #leistungen .service p { display: none; }
+  #leistungen .service-thumb { aspect-ratio: 1 / 1; }
+  /* Ablauf am Handy 2 × 2 */
+  .timeline ol { grid-template-columns: 1fr 1fr; gap: 1.6rem 1.2rem; }
+  .timeline-wire { display: none; }
+  .timeline h3 { font-size: 1.15rem; }
+  .timeline p { font-size: .9rem; }
   .promise-card { padding: 1.3rem; }
   .contact-form { padding: 1.1rem; }
   .contact-list { padding: .2rem 1.1rem; }
