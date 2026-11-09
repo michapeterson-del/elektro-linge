@@ -27,7 +27,7 @@
 
       if (box && data.reviews && data.reviews.length) {
         const list = box.querySelector(".g-list");
-        data.reviews.slice(0, 3).forEach((r) => {
+        data.reviews.slice(0, 6).forEach((r) => {
           const li = document.createElement("li");
           li.innerHTML = '<div class="g-stars" aria-hidden="true"></div><blockquote></blockquote><p class="g-meta"></p>';
           li.querySelector(".g-stars").textContent = stars(r.rating);

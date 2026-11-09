@@ -1,6 +1,37 @@
 {
-  "rating": null,
-  "count": 0,
-  "url": null,
-  "reviews": []
+  "rating": 5,
+  "count": 7,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJnw0vNYxdICARYUA_l0e7p9s",
+  "reviews": [
+    {
+      "author": "Andy P.",
+      "rating": 5,
+      "text": "Kann nur sagen erstklassiges Handwerk und auch top Beratung und Abwicklung.",
+      "date": null
+    },
+    {
+      "author": "F. F.",
+      "rating": 5,
+      "text": "Die Montage und Installation verliefen schnell und reibungslos. Immer wieder gerne! …",
+      "date": null
+    },
+    {
+      "author": "Eduard M.",
+      "rating": 5,
+      "text": "Verlässliche und ordentliche Arbeit. Klare Kommunikation. …",
+      "date": null
+    },
+    {
+      "author": "Jan S.",
+      "rating": 5,
+      "text": "Sehr kompetent und zuverlässig.",
+      "date": null
+    },
+    {
+      "author": "Alex N.",
+      "rating": 5,
+      "text": "Vertrauenswürdig und fair 👍🏼",
+      "date": null
+    }
+  ]
 }

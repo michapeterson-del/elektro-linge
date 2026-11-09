@@ -804,3 +804,4 @@ details p { color: var(--muted); padding-right: 3rem; margin: 0; padding-bottom:
   .g-list::-webkit-scrollbar { display: none; }
   .g-list li { flex: 0 0 82%; scroll-snap-align: start; }
 }
+@media (min-width: 901px) { .g-list li:nth-child(n+4) { display: none; } } /* am PC 3, am Handy alle zum Wischen */
