@@ -71,3 +71,14 @@ python3 -m http.server 8000
 Die Seite `referenzen/index.html` zeigt echte Fotos von Baustellen, die Startseite eine kurze Bildreihe daraus (`#referenzen`).
 Fotos liegen in `assets/img/referenzen/` jeweils zweimal: `<name>.jpg` (groß, max. 1600 px) und `<name>-klein.jpg` (800×600, Ausschnitt 4:3).
 Vor dem Hochladen GPS-/EXIF-Daten entfernen und auf Hausnummern, Kennzeichen und Gesichter achten.
+
+## Google-Bewertungen (automatisch)
+
+`.github/workflows/google-bewertungen.yml` ruft täglich `scripts/google-bewertungen.mjs` auf. Das Skript holt Sterne, Anzahl
+und Rezensionen über die Google Places API (New) und schreibt sie nach `data/google-bewertungen.json`; `js/bewertungen.js`
+zeigt sie auf der Startseite (Sterne unter den Hero-Buttons, „Das sagen unsere Kunden“ bei den Referenzen).
+Gezeigt werden nur Bewertungen ab 4 Sternen, gekennzeichnet als Auswahl. Ohne Daten bleibt beides ausgeblendet.
+
+Einrichtung: In der Google Cloud Console die „Places API (New)“ aktivieren, einen API-Schlüssel erstellen (auf diese API
+beschränken) und ihn im Repo unter Settings → Secrets and variables → Actions als `GOOGLE_PLACES_KEY` speichern.
+Danach unter Actions → „Google-Bewertungen aktualisieren“ → „Run workflow“ einmal von Hand starten.

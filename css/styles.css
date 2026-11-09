@@ -781,3 +781,26 @@ details p { color: var(--muted); padding-right: 3rem; margin: 0; padding-bottom:
 .ref-box img { max-width: 100%; max-height: 82vh; width: auto; height: auto; border-radius: 16px; margin: 0 auto; }
 .ref-caption { color: #fff; text-align: center; margin: .8rem 0 0; font-weight: 600; }
 .ref-close { position: absolute; top: -52px; right: 0; width: 44px; height: 44px; border: 0; border-radius: 50%; background: rgba(255,255,255,.15); color: #fff; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+
+/* ============ Google-Bewertungen ============ */
+.g-stars { color: #f5b400; letter-spacing: .08em; }
+.g-badge { display: inline-flex; align-items: center; gap: .45rem; margin-top: 1.2rem; min-height: 44px; color: rgba(255,255,255,.85); text-decoration: none; font-size: .95rem; }
+.g-badge .g-stars { font-size: 1.05rem; }
+.g-badge strong { color: #fff; }
+.g-badge:hover .g-count { text-decoration: underline; text-decoration-color: var(--yellow); }
+.g-badge[hidden], .g-reviews[hidden] { display: none; }
+
+.g-reviews { margin-top: 3rem; }
+.g-reviews h3 { font: 700 clamp(1.6rem, 3.5vw, 2.2rem) / 1.05 var(--display); text-transform: uppercase; margin: 0 0 .3rem; }
+.g-summary { color: var(--muted); margin: 0 0 1.4rem; }
+.g-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.g-list li { background: var(--paper); border-radius: var(--radius-card); padding: 1.5rem; display: flex; flex-direction: column; }
+.g-list blockquote { margin: .6rem 0 1rem; font-size: 1rem; line-height: 1.55; flex: 1; }
+.g-meta { margin: 0; font-size: .85rem; color: var(--muted); font-weight: 600; }
+.g-note { font-size: .8rem; color: var(--muted); margin: 1rem 0 0; }
+.g-note a { color: var(--ink); font-weight: 700; text-decoration-color: var(--yellow); }
+@media (max-width: 900px) {
+  .g-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; gap: 12px; margin-inline: -20px; padding: 0 20px 6px; scrollbar-width: none; }
+  .g-list::-webkit-scrollbar { display: none; }
+  .g-list li { flex: 0 0 82%; scroll-snap-align: start; }
+}

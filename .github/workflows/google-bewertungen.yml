@@ -1,0 +1,30 @@
+name: Google-Bewertungen aktualisieren
+
+on:
+  schedule:
+    - cron: "17 4 * * *" # täglich ca. 5–6 Uhr deutscher Zeit
+  workflow_dispatch: # zusätzlich per Knopf unter "Actions" startbar
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/google-bewertungen.mjs
+        env:
+          GOOGLE_PLACES_KEY: ${{ secrets.GOOGLE_PLACES_KEY }}
+      - name: Änderungen speichern
+        run: |
+          if [ -n "$(git status --porcelain data/)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/google-bewertungen.json
+            git commit -m "Google-Bewertungen aktualisiert"
+            git push
+          fi
